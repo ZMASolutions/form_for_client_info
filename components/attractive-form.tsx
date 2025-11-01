@@ -17,16 +17,16 @@ import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, For
 // Fixed Form validation schema - removed FileList reference
 const formSchema = z.object({
   firstName: z.string().min(2, {
-    message: 'First name must be at least 2 characters.',
+    message: 'Der Vorname muss mindestens 2 Zeichen lang sein.',
   }),
   lastName: z.string().min(2, {
-    message: 'Last name must be at least 2 characters.',
+    message: 'Der Nachname muss mindestens 2 Zeichen lang sein.',
   }),
   phone: z.string().min(10, {
-    message: 'Phone number must be at least 10 digits.',
+    message: 'Die Telefonnummer muss mindestens 10 Ziffern haben.',
   }),
   address: z.string().min(5, {
-    message: 'Address must be at least 5 characters.',
+    message: 'Die Adresse muss mindestens 5 Zeichen lang sein.',
   }),
   // Remove document from schema since we'll handle it separately
 });
@@ -211,10 +211,10 @@ export function AttractiveForm() {
         <Card className="bg-gradient-to-r from-blue-600 to-purple-600 border-0 shadow-2xl shadow-blue-500/25 mb-8">
           <CardHeader className="text-center text-white pb-6">
             <CardTitle className="text-3xl font-bold mb-4">
-              Please Provide Your Complete Information
+              Bitte geben Sie Ihre vollständigen Informationen an
             </CardTitle>
             <CardDescription className="text-blue-100 text-lg">
-              To Process The Document
+              Um das Dokument zu verarbeiten
             </CardDescription>
             <div className="w-24 h-1 bg-white/30 rounded-full mx-auto mt-4"></div>
           </CardHeader>
@@ -224,10 +224,10 @@ export function AttractiveForm() {
         <Card className="shadow-2xl shadow-purple-500/10 border-purple-100 overflow-hidden">
           <CardHeader className="pb-4">
             <CardTitle className="text-2xl font-bold text-gray-800">
-              Document Information
+              Dokumentinformationen
             </CardTitle>
             <CardDescription className="text-gray-600">
-              Fill in all the required details to process your document
+              Bitte füllen Sie alle erforderlichen Angaben aus, damit Ihr Dokument bearbeitet werden kann.
             </CardDescription>
           </CardHeader>
           
@@ -243,11 +243,11 @@ export function AttractiveForm() {
                       <FormItem>
                         <FormLabel className="flex items-center text-sm font-semibold">
                           <div className="w-2 h-2 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full mr-2"></div>
-                          First Name
+                          Vorname
                         </FormLabel>
                         <FormControl>
                           <Input 
-                            placeholder="Enter your first name" 
+                            placeholder="Geben Sie Ihren Vornamen ein" 
                             {...field}
                             className="transition-all duration-200 focus:ring-2 focus:ring-blue-500/20 border-2"
                           />
@@ -264,11 +264,11 @@ export function AttractiveForm() {
                       <FormItem>
                         <FormLabel className="flex items-center text-sm font-semibold">
                           <div className="w-2 h-2 bg-gradient-to-r from-green-500 to-cyan-500 rounded-full mr-2"></div>
-                          Last Name
+                          Nachname
                         </FormLabel>
                         <FormControl>
                           <Input 
-                            placeholder="Enter your last name" 
+                            placeholder="Geben Sie Ihren Nachnamen ein" 
                             {...field}
                             className="transition-all duration-200 focus:ring-2 focus:ring-green-500/20 border-2"
                           />
@@ -288,12 +288,12 @@ export function AttractiveForm() {
                       <FormItem>
                         <FormLabel className="flex items-center text-sm font-semibold">
                           <div className="w-2 h-2 bg-gradient-to-r from-orange-500 to-pink-500 rounded-full mr-2"></div>
-                          Phone
+                          Kontaktinformationen
                         </FormLabel>
                         <FormControl>
                           <Input 
                             type="tel"
-                            placeholder="Enter your phone number" 
+                            placeholder="Geben Sie Ihre Telefon-/Handynummer ein" 
                             {...field}
                             className="transition-all duration-200 focus:ring-2 focus:ring-orange-500/20 border-2"
                           />
@@ -310,11 +310,11 @@ export function AttractiveForm() {
                       <FormItem>
                         <FormLabel className="flex items-center text-sm font-semibold">
                           <div className="w-2 h-2 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full mr-2"></div>
-                          Address
+                          Adresse
                         </FormLabel>
                         <FormControl>
                           <Input 
-                            placeholder="Enter your address" 
+                            placeholder="Geben Sie Ihre vollständige Adresse ein" 
                             {...field}
                             className="transition-all duration-200 focus:ring-2 focus:ring-purple-500/20 border-2"
                           />
@@ -329,7 +329,7 @@ export function AttractiveForm() {
                 <div className="space-y-3">
                   <Label className="flex items-center text-sm font-semibold">
                     <div className="w-2 h-2 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full mr-2"></div>
-                    Upload Document (pdf, doc, etc)
+                    Dokument hochladen (pdf, doc usw.)
                   </Label>
                   
                   <div className="border-2 border-dashed border-gray-300 rounded-xl p-6 text-center transition-all duration-200 hover:border-cyan-400 hover:bg-cyan-50/30 bg-gray-50/50 cursor-pointer">
@@ -348,7 +348,7 @@ export function AttractiveForm() {
                           </svg>
                         </div>
                         <p className="text-gray-600 mb-1 font-medium">
-                          {selectedFile ? selectedFile.name : 'Click to upload or drag and drop'}
+                          {selectedFile ? selectedFile.name : 'Zum Hochladen klicken oder per Drag & Drop ablegen'}
                         </p>
                         <p className="text-gray-400 text-sm">
                           PDF, DOC, DOCX, TXT, JPG, PNG (Max. 10MB)
@@ -366,7 +366,7 @@ export function AttractiveForm() {
                         <div>
                           <p className="text-sm font-medium text-green-800">{selectedFile.name}</p>
                           <p className="text-xs text-green-600">
-                            {formatFileSize(selectedFile.size)} • Ready for upload
+                            {formatFileSize(selectedFile.size)} • Bereit zum Hochladen
                           </p>
                         </div>
                       </div>
@@ -377,7 +377,7 @@ export function AttractiveForm() {
                         onClick={handleRemoveFile}
                         className="text-red-600 border-red-200 hover:bg-red-50"
                       >
-                        Remove
+                        Entfernen
                       </Button>
                     </div>
                   )}
@@ -395,7 +395,7 @@ export function AttractiveForm() {
                       Processing Your Document...
                     </div>
                   ) : (
-                    'Submit Document'
+                    'Dokument einreichen'
                   )}
                 </Button>
               </form>
@@ -411,7 +411,7 @@ export function AttractiveForm() {
                 <svg className="w-4 h-4 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                 </svg>
-                Your information is secure and protected
+                Ihre Daten sind sicher und geschützt.
               </p>
             </CardContent>
           </Card>
