@@ -207,28 +207,33 @@ export function AttractiveForm() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-50 via-blue-50 to-cyan-50 py-8 px-4">
       <div className="max-w-2xl mx-auto">
-        {/* Header Card */}
-        <Card className="bg-gradient-to-r from-blue-600 to-purple-600 border-0 shadow-2xl shadow-blue-500/25 mb-8">
-          <CardHeader className="text-center text-white pb-6">
-            <CardTitle className="text-3xl font-bold mb-4">
-              Bitte geben Sie Ihre vollständigen Informationen an
-            </CardTitle>
-            <CardDescription className="text-blue-100 text-lg">
-              Um das Dokument zu verarbeiten
-            </CardDescription>
-            <div className="w-24 h-1 bg-white/30 rounded-full mx-auto mt-4"></div>
-          </CardHeader>
-        </Card>
+        {/* Header without Logo */}
+        <div className="flex flex-col items-center mb-8">
+          {/* Header Card */}
+          <Card className="bg-gradient-to-r from-blue-600 to-purple-600 border-0 shadow-2xl shadow-blue-500/25 w-full">
+            <CardHeader className="text-center text-white pb-6">
+              <CardTitle className="text-3xl font-bold mb-4">
+                Bitte geben Sie Ihre vollständigen Informationen an
+              </CardTitle>
+              <CardDescription className="text-blue-100 text-lg">
+                Um das Dokument zu verarbeiten
+              </CardDescription>
+              <div className="w-24 h-1 bg-white/30 rounded-full mx-auto mt-4"></div>
+            </CardHeader>
+          </Card>
+        </div>
 
         {/* Form Card */}
         <Card className="shadow-2xl shadow-purple-500/10 border-purple-100 overflow-hidden">
           <CardHeader className="pb-4">
-            <CardTitle className="text-2xl font-bold text-gray-800">
-              Dokumentinformationen
-            </CardTitle>
-            <CardDescription className="text-gray-600">
-              Bitte füllen Sie alle erforderlichen Angaben aus, damit Ihr Dokument bearbeitet werden kann.
-            </CardDescription>
+            <div>
+              <CardTitle className="text-2xl font-bold text-gray-800">
+                Dokumentinformationen
+              </CardTitle>
+              <CardDescription className="text-gray-600">
+                Bitte füllen Sie alle erforderlichen Angaben aus, damit Ihr Dokument bearbeitet werden kann.
+              </CardDescription>
+            </div>
           </CardHeader>
           
           <CardContent>
@@ -403,16 +408,44 @@ export function AttractiveForm() {
           </CardContent>
         </Card>
 
-        {/* Additional Info */}
+        {/* Enhanced Footer Section with Attractive Cybrain Logo */}
         <div className="text-center mt-6">
           <Card className="bg-white/50 backdrop-blur-sm border-0">
-            <CardContent className="p-4">
-              <p className="text-gray-500 text-sm flex items-center justify-center">
-                <svg className="w-4 h-4 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-                </svg>
-                Ihre Daten sind sicher und geschützt.
-              </p>
+            <CardContent className="p-6">
+              <div className="flex flex-col items-center space-y-4">
+                {/* Security Message */}
+                <p className="text-gray-500 text-sm flex items-center">
+                  <svg className="w-4 h-4 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                  </svg>
+                  Ihre Daten sind sicher und geschützt.
+                </p>
+                
+                {/* Attractive Cybrain Logo */}
+                <div className="flex items-center justify-center space-x-4 pt-4 border-t border-gray-200/50 w-full">
+                  <div className="flex items-center space-x-3 bg-gradient-to-r from-cyan-50 to-blue-50 px-6 py-4 rounded-2xl border border-cyan-100 shadow-sm">
+                    <div className="relative">
+                      <div className="w-14 h-14 bg-gradient-to-br from-cyan-500 via-blue-500 to-purple-600 rounded-2xl flex items-center justify-center font-bold text-white text-2xl shadow-lg transform rotate-3">
+                        <div className="absolute inset-0 bg-white/20 rounded-2xl blur-sm"></div>
+                        <span className="relative z-10">C</span>
+                      </div>
+                    </div>
+                    <div className="text-left">
+                      <div className="font-bold bg-gradient-to-r from-cyan-600 via-blue-600 to-purple-700 bg-clip-text text-transparent text-xl tracking-wide">
+                        cybrain
+                      </div>
+                      <div className="text-xs text-gray-500 font-medium mt-1">
+                        AI-Powered Solutions
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Powered By Text */}
+                <div className="text-gray-400 text-sm flex items-center">
+                  <span>Securely powered by Cybrain Technology</span>
+                </div>
+              </div>
             </CardContent>
           </Card>
         </div>
