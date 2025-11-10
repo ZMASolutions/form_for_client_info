@@ -128,7 +128,7 @@ export function AttractiveForm({ clientEmail = '', token = '', missingFields = [
       }
       
       // Send to backend API
-      const API_URL = process.env.NEXT_PUBLIC_API_URL;
+      const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://37.120.176:8005';
       const endpoint = `${API_URL}/api/client/submit-missing-info`;
       console.log(`🌐 Sending to: ${endpoint}`);
       
